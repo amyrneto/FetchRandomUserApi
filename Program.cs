@@ -2,7 +2,7 @@
 
 namespace FetchRandomUserApi
 {
-    internal class Program
+    public class Program
     {
         static string url = "https://randomuser.me/api/";
         static async Task Main(string[] args)
@@ -22,9 +22,9 @@ namespace FetchRandomUserApi
             {
                 Console.WriteLine($"An exception has occurred: {ex.Message}");
             }
-        }
+		}
 
-        static async Task<RandomUser?> FetchRandomUserAsync()
+		static async Task<RandomUser?> FetchRandomUserAsync()
         {
             using var client = new HttpClient();
             var response = await client.GetAsync(url);
